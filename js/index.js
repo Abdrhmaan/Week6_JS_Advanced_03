@@ -40,3 +40,32 @@ const siteContent = {
   // Example: Update the img src for the logo
   let logo = document.getElementById("logo-img");
   logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+
+  // Create and append navigation items
+let nav = document.querySelector(".nav");
+for (let i = 1; i <= 6; i++) {
+
+  let navItem = document.createElement("a");
+  navItem.href = "#";
+  navItem.textContent = siteContent["nav"][`nav-item-${i}`];
+  nav.appendChild(navItem);
+}
+
+
+let ctaHeading = document.querySelector(".cta h1");
+let ctaButton = document.querySelector(".cta button");
+let ctaImage = document.getElementById("cta-img");
+ctaHeading.textContent = siteContent["cta"]["h1"];
+ctaButton.textContent = siteContent["cta"]["button"];
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
+
+
+let topContentHeadings = document.querySelectorAll(".top-content h4");
+let topContentParagraphs = document.querySelectorAll(".top-content p");
+topContentHeadings[0].textContent = siteContent["main-content"]["features-h4"];
+topContentParagraphs[0].textContent = siteContent["main-content"]["features-content"];
+topContentHeadings[1].textContent = siteContent["main-content"]["about-h4"];
+topContentParagraphs[1].textContent = siteContent["main-content"]["about-content"];
